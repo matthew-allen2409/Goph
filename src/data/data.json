@@ -1,0 +1,40 @@
+{
+    "users": [
+        {
+            "img": "BigRig.jpg",
+            "activity": "Lunch",
+            "userName": "Rigby",
+            "additionalInfo": "I like pizza."
+        },
+        {
+            "img": "BuffMordecai.png",
+            "activity": "Studying",
+            "userName": "Mordecai",
+            "additionalInfo": "I don't like studying."
+        },
+        {
+            "img": "Skips.png",
+            "activity": "Gym",
+            "userName": "Skips",
+            "additionalInfo": "I don't skip leg day."
+        },
+        {
+            "img": "BigRig.jpg",
+            "activity": "Work",
+            "userName": "Rigby",
+            "additionalInfo": "I'm doing lawn work today."
+        },
+        {
+            "img": "Skips.png",
+            "activity": "Work",
+            "userName": "Skips Two",
+            "additionalInfo": "I'm doing lawn work today."
+        },
+        {
+            "img": "Skips.png",
+            "activity": "Work",
+            "userName": "Skips Two",
+            "additionalInfo": "I'm doing lawn work today."
+        }
+    ]
+}
