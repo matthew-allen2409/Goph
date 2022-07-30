@@ -1,26 +1,46 @@
 import React from "react";
 
 function Login() {
+    const [username, setUsername] = React.useState('');
+    const [password, setPassword] = React.useState('');
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        
+    }
+
     return (
         <div className="signupContainer">
             <div className="signupHead">
                 <h1>Login</h1>
             </div>
-            <div className="login--form">
+            <form className="login--form" onSubmit={handleSubmit}>
                 <label>
                     Userame:
-                    <input type="text" name="username" />
+                    <input
+                    type="text"
+                    name="username"
+                    required
+                    value={username}
+                    onChange={e => setUsername(e.target.value)}
+                    />
                 </label>
                 <label>
                     Password:
-                    <input type="text" name="password" />
+                    <input
+                    type="password"
+                    name="password"
+                    required
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                    />
                 </label>
                 <input
                     type="submit"
                     value="Log in"
                     className="button--submit"
                 />
-            </div>
+            </form>
         </div>
     )
 }
