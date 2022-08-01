@@ -5,7 +5,7 @@ function userCard(props) {
     <div className="userCard">
         <div className="card--user">
             <img 
-                src={`http://localhost:3000/api/pfp?user_num=${33}` || "BigRig.jpg"}
+                src={`http://localhost:3000/api/pfp?user=${props.user}` || "BigRig.jpg"}
                 className="cardImg"
                 alt="user"
             />

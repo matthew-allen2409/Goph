@@ -18,6 +18,7 @@ function Main() {
                 <UserCard
                     img={user.img || "BigRig.jpg"}
                     activity={user.activity}
+                    user={user.username}
                     userName={ (user.first_name && user.last_name) && `${user.first_name} ${user.last_name}` ||user.username}
                     additionalInfo={user.additional_info}
                 />
