@@ -134,6 +134,7 @@ header {
   margin: 10px;
   margin-bottom: 0;
   border: 1.5px solid;
+  object-fit:cover;
 }
 
 .card--info {
@@ -156,6 +157,11 @@ header {
   border: 2px solid;
   background-color: white;
   z-index: 2;
+}
+
+.signupContainer > p {
+  position: absolute;
+  bottom: 1rem;
 }
 
 .signupHead {

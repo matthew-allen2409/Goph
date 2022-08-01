@@ -6,6 +6,7 @@ function Signup() {
     const [lastName, setLastName] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [invalid, setInvalid] = useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -25,6 +26,9 @@ function Signup() {
                 body: JSON.stringify(newUser)
             });
         }
+        else {
+            setInvalid('Passwords must match');
+        }
     }
 
     return (
@@ -32,6 +36,7 @@ function Signup() {
             <div className="signupHead">
                 <h1>Signup</h1>
             </div>
+            <p>{invalid}</p>
             <form className="login--form" onSubmit={handleSubmit}>
                 <label>
                     *Username:

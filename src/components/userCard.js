@@ -1,13 +1,11 @@
 import React from "react";
 
 function userCard(props) {
-
-
     return (
     <div className="userCard">
         <div className="card--user">
             <img 
-                src={require(`../img/${props.img}`)}
+                src={`http://localhost:3000/api/pfp?user_num=${33}` || "BigRig.jpg"}
                 className="cardImg"
                 alt="user"
             />

@@ -6,7 +6,20 @@ function Login() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        
+        const credentials = {
+            "username": username,
+            "password": password
+        }
+        fetch('/api/login',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(credentials)
+        })
+        .then(res => res.json())
+        .then(body => document.cookie = `JWT=${body.JWT}`)
     }
 
     return (
