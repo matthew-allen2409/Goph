@@ -3,8 +3,15 @@ import Cookies from 'js-cookie'
 import React from 'react'
 import Mordecai from '../img/BuffMordecai.png'
 
+
 function Header(props) {
     const JWT = props.JWT
+
+    function logout() {
+      Cookies.remove('JWT');
+      props.setJWT(null);
+    }
+
     return (
         <header>
             <div className='logo-container'>
@@ -17,7 +24,7 @@ function Header(props) {
                 <button className='login' onClick={props.toggleLogin}>Log in</button>
             </div> :
             <div className='buttons'>
-               <button onClick={Cookies.remove('JWT')}>Log out</button>
+               <button className='logout' onClick={logout}>Log out</button>
             </div>
             }
         </header>

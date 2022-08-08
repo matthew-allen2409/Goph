@@ -1,12 +1,13 @@
 import React from "react";
 import Cookies from "js-cookie";
 
-function Login() {
+function Login(props) {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
+        props.closeWindow();
         const credentials = {
             "username": username,
             "password": password
@@ -20,7 +21,9 @@ function Login() {
             body: JSON.stringify(credentials)
         })
         .then(res => res.json())
-        .then(body => Cookies.set('JWT', body.JWT));
+        .then(body => Cookies.set('JWT', body.JWT))
+        .then(() => props.setJWT(Cookies.get('JWT')))
+        console.log('logged in');
     }
 
     return (

@@ -13,8 +13,11 @@ function App() {
   const [showSignup, setShowSignup] = React.useState(false);
   const [showLogin, setShowLogin] = React.useState(false);
   const [showCreateEvent, setShowCreateEvent] = React.useState(false);
+  const [JWT, setJWT] = React.useState(null)
   
-  const JWT = Cookies.get('JWT');
+  React.useEffect(() => {
+    setJWT(Cookies.get('JWT'));
+  }, [])
 
   function toggleSignup() {
     setShowSignup(prev => !prev);
@@ -41,6 +44,7 @@ function App() {
       toggleSignup={toggleSignup}
       toggleLogin={toggleLogin}
       JWT={JWT}
+      setJWT={setJWT}
     />
     <Sidebar
       toggleShowCreateEvent={toggleCreateEvent}
@@ -51,7 +55,11 @@ function App() {
       onClick={clearModal}
     />}
     {showSignup && <Signup />}
-    {showLogin && <Login />}
+    {showLogin && <Login
+        closeWindow={toggleLogin} 
+        setJWT={setJWT}
+      />
+    }
     {showCreateEvent && <CreateEvent />}
     </>
   )
