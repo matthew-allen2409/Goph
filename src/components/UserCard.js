@@ -1,11 +1,11 @@
 import React from "react";
 
-function userCard(props) {
+function UserCard(props) {
     return (
     <div className="userCard">
         <div className="card--user">
             <img 
-                src={`http://localhost:3000/api/pfp?user=${props.user}` || "BigRig.jpg"}
+                src={`http://localhost:3000/api/pfp?user=${props.user}` || "BigRig.jpg"} 
                 className="cardImg"
                 alt="user"
             />
@@ -19,4 +19,4 @@ function userCard(props) {
     )
 }
 
-export default userCard
+export default UserCard

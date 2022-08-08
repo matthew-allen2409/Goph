@@ -1,4 +1,5 @@
 import React from "react";
+import Cookies from "js-cookie";
 
 function Login() {
     const [username, setUsername] = React.useState('');
@@ -19,7 +20,7 @@ function Login() {
             body: JSON.stringify(credentials)
         })
         .then(res => res.json())
-        .then(body => document.cookie = `JWT=${body.JWT}`)
+        .then(body => Cookies.set('JWT', body.JWT));
     }
 
     return (

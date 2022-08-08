@@ -1,4 +1,5 @@
 import React from 'react'
+import Cookies from 'js-cookie'
 
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
@@ -7,11 +8,13 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import CreateEvent from './components/CreateEvent'
 
-function App() {
 
+function App() {
   const [showSignup, setShowSignup] = React.useState(false);
   const [showLogin, setShowLogin] = React.useState(false);
   const [showCreateEvent, setShowCreateEvent] = React.useState(false);
+  
+  const JWT = Cookies.get('JWT');
 
   function toggleSignup() {
     setShowSignup(prev => !prev);
@@ -30,12 +33,14 @@ function App() {
     setShowSignup(false);
     setShowCreateEvent(false);
   }
+
   
   return (
     <>
     <Header
       toggleSignup={toggleSignup}
       toggleLogin={toggleLogin}
+      JWT={JWT}
     />
     <Sidebar
       toggleShowCreateEvent={toggleCreateEvent}
